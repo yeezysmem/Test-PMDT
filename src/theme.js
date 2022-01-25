@@ -11,7 +11,7 @@ export const theme = createMuiTheme({
         main: "#fff",
       },
       secondary: {
-        main: "#262662",
+        main: "#F42C3C",
         contrastText: "#fff",
         secondaryBorder: "1px solid #444",
       },
@@ -19,7 +19,7 @@ export const theme = createMuiTheme({
           main: "#5B5B5B"
       },
       checkbox: {
-          main: "#BC53C"
+          main: "#F42C3C"
       }
     },
   
@@ -101,8 +101,67 @@ export const theme = createMuiTheme({
     shadows: ["none"],
   
     overrides: {
+      MuiToggleButton: {
+
+      },
+      MuiSwitch: {
+        switchBase: {
+          // Controls default (unchecked) color for the thumb
+          color: "#5B5B5B"
+        },
+        colorSecondary: {
+         
+          "&$checked": {
+            // Controls checked color for the thumb
+            color: "#000046"
+          }
+        },
+        thumb: {
+          marginTop:3,
+          width: 14,
+          height: 14,
+        },
+        track: {
+          width:28,
+          // Controls default (unchecked) color for the track
+          opacity: 0.9,
+          backgroundColor: "#EAEAEA",
+          "$checked$checked + &": {
+            // Controls checked color for the track
+            opacity: 0.7,
+            backgroundColor: "#E5E5FF"
+          }
+        }
+      },
+      MuiCheckbox: {
+        colorSecondary: {
+          color:"#FBC53C",
+          "&:hover": {
+            color: "#FBC53C"
+          },
+          "&$checked": {
+            color: "#FBC53C",
+            
+        }
+      },
+    },
+    
+      MuiInput: {
+        input: {
+          color:"#fff",
+          borderColor:"green",
+          "&::placeholder": {
+            color:"#fff"
+          },
+          
+        }
+      },
       MuiCssBaseline: {
         "@global": {
+          ".MuiToggleButton-root": {
+            borderRadius: 2,
+            border:"1px solid #000046 !important",
+          },
           "@font-face": "Montserrat",
           html: {
             boxSizing: "border-box",
@@ -140,5 +199,6 @@ export const theme = createMuiTheme({
       },
     },
   });
+
   
   export default theme;
