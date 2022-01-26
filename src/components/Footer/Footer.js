@@ -7,12 +7,25 @@ import {
   getSummary as getSummaryAction,
   deletePost as deletePostAction,
 } from "../../redux/modules/posts";
+import FooterLink from "./components/FooterLink";
+import SocialLink from "./components/SocialLink"
+//icons
+import twitter from "../../static/images/twitter.svg"
+import linkedin from "../../static/images/linkedin.svg"
+import facebook from "../../static/images/facebook.svg"
+import instagram from "../../static/images/instagram.svg"
+import youtube from "../../static/images/youtube.svg"
+import whatsapp from "../../static/images/whatsapp.svg"
+
 
 const useStyles = makeStyles((theme) => ({
   footer: {
     backgroundImage: `url(${footerBg})`,
     height: 333,
     backgroundSize: "cover",
+  },
+  footerLink: {
+    color: "#fff",
   },
   //   subCatItem: {
   //     "&::after": {
@@ -33,36 +46,33 @@ function Footer({ title }) {
   return (
     <div className={classes.footer}>
       <Container>
-        <Grid container direction="column">
-          <Grid item xs="4">
-          <Grid container>
-            
+        <Grid container justifyContent="space-evenly">
+          <Grid item>
+            <Grid container direction="column">
+              <FooterLink title="Другое"/>
+              <FooterLink title="Про Нас"/>
+              <FooterLink title="Блог"/>
+            </Grid>
           </Grid>
-          
+          <Grid item>
+            <Grid container direction="column">
+            <FooterLink href="https://pm-dt.com/" title="Сотрудничество с нами"/>
+            <FooterLink title="Реклама на сайте"/>
+            <FooterLink title="Партнерская программа"/>
+            <FooterLink title="Контакты"/>
+            </Grid>
+          </Grid>
+          <Grid item>
+            <Grid container direction="row" alignItems="center">
+              <SocialLink icon={twitter} />
+              <SocialLink icon={linkedin} />
+              <SocialLink icon={facebook} />
+              <SocialLink icon={instagram} />
+              <SocialLink icon={youtube} />
+              <SocialLink icon={whatsapp} />
+            </Grid>
           </Grid>
         </Grid>
-        <Grid container direction="column">
-            <Grid item>
-              <Link href="#" variant="subtitle2" color="white">
-                Сотрудничество с нами
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link href="#" variant="subtitle2" color="white">
-                Реклама на сайте
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link href="#" variant="subtitle2" color="white">
-                Партнерская программа
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link href="#" variant="subtitle2" color="white">
-                Контакты
-              </Link>
-            </Grid>
-          </Grid>
       </Container>
     </div>
   );
