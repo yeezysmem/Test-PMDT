@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import ToggleButton from "@material-ui/lab/ToggleButton";
-import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
+import ToggleButton from "@material-ui/lab/material/ToggleButton";
+import ToggleButtonGroup from "@material-ui/material/ToggleButtonGroup";
 
 const useStyles = makeStyles((theme) => ({
   root: (props) => {
