@@ -21,7 +21,7 @@ function valuetext(value) {
 }
 
 function FeeFilter() {
-  const [value, setValue] = React.useState([1100,8980]);
+  const [value, setValue] = React.useState([1800,8980]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);

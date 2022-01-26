@@ -7,7 +7,7 @@ import {
   deletePost as deletePostAction,
 } from "../../../redux/modules/posts";
 import Post from "../../Post";
-import { Container, Grid, Slider, Box } from "@material-ui/core";
+import { Container, Grid, Slider, Box, Divider } from "@material-ui/core";
 import {
   Typography,
   FormControlLabel,
@@ -21,35 +21,37 @@ function valuetext(value) {
 }
 
 function AgeFilter() {
-  const [value, setValue] = React.useState([17,40]);
+  const [value, setValue] = React.useState([20,40]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
   return (
-    <Grid item xs={12}>
+    <Grid item xs={12} style={{marginBottom:55}}>
       <Container>
-        <Typography variant="h5" component="h5">
+        <Typography variant="h5" component="h5" style={{marginBottom:12}}>
           Возраст
         </Typography>
-        <Grid container justifyContent="space-around" alignItems="center">
+        <Divider light style={{marginBottom:30}} />
+        {/* <Grid container justifyContent="space-around" alignItems="center"> */}
           <Slider
             getAriaLabel={() => "Age range"}
             value={value}
             onChange={handleChange}
-            valueLabelDisplay="auto"
             getAriaValueText={valuetext}
             min={17}
             max={50}
             step="1"
+            style={{marginBottom:15}}
           />
-          <Grid item style={{display:"flex", alignItems:"center"}}>
-              <span>от</span>
-              <Box style={{padding:10}}>{value[0]}</Box>
-              <span>до</span>
-              <Box style={{padding:10}}>{value[1]}</Box>
+          <Grid container direction="row" alignItems="center" justifyContent="space-between">
+              <Grid item>от</Grid>
+              <Grid item style={{padding: "10px 40px", border:"1px solid #EAEAEA"}}>{value[0]}</Grid>
+              <Grid item>до</Grid>
+              <Grid item style={{padding: "10px 40px", border:"1px solid #EAEAEA"}}>{value[1]}</Grid>
+              <Grid item>грн</Grid>
           </Grid>
-        </Grid>
+        {/* </Grid> */}
       </Container>
     </Grid>
   );
