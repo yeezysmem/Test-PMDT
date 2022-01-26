@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+
 // import './App.css';
 import { connect } from "react-redux";
 import "../ResumeCard/ResumeCard.scss";
+import { makeStyles } from "@material-ui/core/styles";
 import {
   getSummary as getSummaryAction,
   deletePost as deletePostAction,
@@ -10,9 +11,6 @@ import Post from "../Post";
 import { Container, Grid } from "@material-ui/core";
 import {
   Typography,
-  FormControlLabel,
-  FormGroup,
-  Switch,
 } from "@material-ui/core";
 import loudSpeaker from "../../static/images/loudSpeaker.svg";
 import AgeFilter from "./components/AgeFilter";
@@ -24,13 +22,24 @@ import LanguageFilter from "./components/LanguageFilter.jsx";
 import EmploymentType from "./components/EmploymentType";
 import EducationFilter from "./components/EducationFilter";
 
+const useStyles = makeStyles((theme) => ({
+
+  filters: {
+    [theme.breakpoints.up("sm")]: {
+      display: "block",
+    },
+    // [theme.breakpoints.down("sm")]: {
+    //   display: "none",
+    // },
+  },
+}));
+
+
 function Filters() {
-  // useEffect(() => {
-  //   getSummary();
-  // }, []);
+  const classes = useStyles();
 
   return (
-    <Grid item xs={4}>
+    <Grid item xs={12} sm={12} md={4} className={classes.filters}>
       <Container>
         <Typography variant="h4" component="h5" style={{marginBottom:34}}>
           Фильтры
