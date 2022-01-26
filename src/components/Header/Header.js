@@ -9,7 +9,7 @@ import {
 } from "../../redux/modules/posts";
 import { spacing } from "@mui/system";
 import lang from "../../static/images/lang.svg";
-import dropDown from "../../static/images/dropDown.svg"
+import dropDown from "../../static/images/dropDown.svg";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -17,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
     height: 230,
     backgroundSize: "cover",
     marginBottom: 70,
+    [theme.breakpoints.down("sm")]: {
+      height: 280,
+    },
   },
   textField: {
     padding: 10,
@@ -49,43 +52,58 @@ const useStyles = makeStyles((theme) => ({
     color: "#EAEAEA",
     "&:hover": {
       color: "#fff",
-      
     },
-    
+    [theme.breakpoints.down("sm")]: {
+      fontWeight: 400,
+      fontSize: 13,
+    },
+  },
+  navLinkCurrent: {
+    color: "#fff",
+    fontWeight: 500,
+    padding:"0 10px",
+    [theme.breakpoints.down("sm")]: {
+      fontWeight: 400,
+      fontSize: 13,
+    },
+  },
+  searchBarContainer: {
+    paddingTop: 35,
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: 0,
+    },
+  },
+  navLinkContainer: {
+    display: "flex",
+    padding: "13px 33px",
+    alignItems: "center",
+  },
+  horisontalDivider: {
+    background: "#fff",
+    height: 12,
+    width: 1,
   },
 }));
 
-function Header({ title }) {
+function Header() {
   const classes = useStyles();
   return (
     <div className={classes.header}>
       <Grid container justifyContent="space-between" alignItems="center">
-        <Grid
-          item
-          style={{
-            display: "flex",
-            padding: "13px 33px",
-            alignItems: "center",
-          }}
-        >
+        <Grid className={classes.navLinkContainer} item>
           <Link href="#" variant="subtitle2" className={classes.navLink}>
             Соискатель
           </Link>
-          <span style={{ background: "#fff", height: 12, width: 1 }} />
-          <Link
-            href="#"
-            variant="subtitle2"
-            style={{ color: "#fff", fontWeight: 500 }}
-            className={classes.navLink}
-          >
+          <span className={classes.horisontalDivider} />
+          <Link href="#" variant="subtitle2" className={classes.navLinkCurrent}>
             Работодатель
           </Link>
-          <span style={{ background: "#fff", height: 12, width: 1 }} />
+          <span className={classes.horisontalDivider} />
           <Link href="#" variant="subtitle2" className={classes.navLink}>
             HR
           </Link>
         </Grid>
-        <Grid item style={{ padding: "13px 33px" }}>
+        {/* <Grid item style={{ padding: "13px 33px" }}>
           <Grid container alignItems="center">
             <img src={lang} style={{cursor:"pointer"}} />
             <typography variant="subtitle2" style={{fontSize:14, cursor:"pointer"}} className={classes.navLink}>
@@ -96,7 +114,7 @@ function Header({ title }) {
               Войти
             </Link>
           </Grid>
-        </Grid>
+        </Grid> */}
       </Grid>
       <Container>
         <Grid
@@ -105,38 +123,32 @@ function Header({ title }) {
           alignItems="flex-end"
           direction="row"
           spacing={2}
-          style={{paddingTop:35}}
+          className={classes.searchBarContainer}
         >
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={4}>
             <TextField
-              id="outlined-multiline-flexible"
               placeholder="На какую должность вы ищете кандидата?"
               fullWidth
               variant="standard"
               maxRows={4}
               className={classes.textField}
               InputProps={{ classes }}
-
-              //   value={value}
-              //   onChange={handleChange}
             />
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={12} sm={2}>
             <TextField
-              id="outlined-flexible"
               fullWidth
               maxRows={4}
               className={classes.textField}
               placeholder="Город"
               variant="standard"
               InputProps={{ classes }}
-
-              //   value={value}
-              //   onChange={handleChange}
             />
           </Grid>
-          <Grid item>
-            <Button className={classes.btn}>Найти кандидатов</Button>
+          <Grid item xs={12} sm={4}>
+            <Button fullWidth className={classes.btn}>
+              Найти кандидатов
+            </Button>
           </Grid>
         </Grid>
       </Container>
