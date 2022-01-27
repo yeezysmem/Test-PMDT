@@ -5,6 +5,7 @@ import {
   getSummary as getSummaryAction,
   deletePost as deletePostAction,
 } from "../../redux/modules/posts";
+
 import {
   Typography,
   Checkbox,
@@ -52,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
   cityBox: {
     display: "flex",
     alignItems: "center",
-    paddingLeft: 22,
+    paddingLeft: 0,
     [theme.breakpoints.down("sm")]: {
       paddingLeft: 0,
       fontSize: 13,
@@ -60,6 +61,17 @@ const useStyles = makeStyles((theme) => ({
   },
   secondPosition: {
     paddingBottom: 20,
+  },
+  desktopContent: {
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
+  },
+  mobileContent: {
+    display: "none",
+    [theme.breakpoints.down("sm")]: {
+      display: "block",
+    },
   },
 }));
 
@@ -102,14 +114,211 @@ function Post({
     <Grid container className={classes.cardContainer}>
       <Grid item>
         <Grid container>
-          <Grid item xs={3} sm={4}>
+          <Grid item xs={3} sm={4} md={3}>
             <div className={classes.avatarBox}>
               <img src={image}></img>
             </div>
           </Grid>
-
           <Grid item xs={9} sm={8}>
-            <Typography
+            <Grid container>
+              <Grid item xs={12} sm={12} className={classes.secondPosition}>
+                <Typography
+                  variant="h4"
+                  component="p"
+                  className={classes.mainPosition}
+                >
+                  Продавец - консультант
+                </Typography>
+                <Grid container>
+                  <Grid item xs={12} sm={4} md={3}>
+                    <Typography variant="body1">
+                      {fstName}, {absCurrentYears} лет
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={9} sm={5} md={4} className={classes.cityBox}>
+                    <img src={marker}></img>
+                    <span>Kyiv, Ukraine</span>
+                  </Grid>
+                </Grid>
+                
+              </Grid>
+              
+              <div className={classes.desktopContent}>
+                <Typography variant="body2">
+                  Координатор BALOX Agency - 4 мес.
+                </Typography>
+                <Typography variant="body2">
+                  Координатор BALOX Agency - 4 мес.
+                </Typography>
+
+                <Grid container>
+                  <Grid item xs={12} sm={8}>
+                    <Grid container alignItems="center">
+                      <Grid item xs={8} sm={8}>
+                        <Typography variant="subtitle1">
+                          Обновлено {id} минут назад
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                  <Grid
+                    item
+                    xs={12}
+                    sm={4}
+                    style={{ display: "flex", alignItems: "center" }}
+                  >
+                    <div
+                      style={{
+                        width: "12px",
+                        height: "12px",
+                        backgroundColor: "#4CAF50",
+                        borderRadius: "100%",
+                        marginRight: 4,
+                      }}
+                    />
+                    <Typography
+                      variant="subtitle1"
+                      style={{ color: "#4CAF50" }}
+                    >
+                      Онлайн
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </div>
+            </Grid>
+          </Grid>
+
+          <Grid item xs={12} sm={12} className={classes.mobileContent}>
+            <Grid container>
+              <Grid item xs={12} className={classes.secondPosition}>
+                <Typography variant="body2">
+                  Координатор BALOX Agency - 4 мес.
+                </Typography>
+              </Grid>
+              <Grid item xs={12} sm={12} className={classes.secondPosition}>
+                <Typography variant="body2">
+                  Координатор BALOX Agency - 4 мес.
+                </Typography>
+              </Grid>
+              <Grid container >
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                  style={{ display: "flex", alignItems: "center" }}
+                >
+                  <div
+                    style={{
+                      width: "12px",
+                      height: "12px",
+                      backgroundColor: "#4CAF50",
+                      borderRadius: "100%",
+                      marginRight: 4,
+                    }}
+                  />
+                  <Typography variant="subtitle1" style={{ color: "#4CAF50" }}>
+                    Онлайн
+                  </Typography>
+                </Grid>
+                <Grid item xs={12} sm={8} md={9}>
+                  <Grid container alignItems="center">
+                    <Grid item xs={9} sm={8}>
+                      <Typography variant="subtitle1">
+                        Обновлено {id} минут назад
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={3}>
+                  <Grid container alignItems="center" justifyContent="flex-end">
+                    <Grid item xs={6}>
+                      <div
+                        style={{
+                          width: 46,
+                          height: 46,
+                          border: "0.5px solid #EAEAEA",
+                          borderRadius: 8,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          cursor: "pointer",
+                        }}
+                      >
+                        <Checkbox
+                          icon={<FavoriteBorder />}
+                          checkedIcon={<Favorite />}
+                          style={{ color: "#F42C3C" }}
+                        />
+                      </div>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <div
+                        style={{
+                          width: 46,
+                          height: 46,
+                          border: "0.5px solid #EAEAEA",
+                          borderRadius: 8,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          marginLeft: 12,
+                          cursor: "pointer",
+                        }}
+                      >
+                        <Button
+                          id="basic-button"
+                          aria-controls={open ? "basic-menu" : undefined}
+                          aria-haspopup="true"
+                          aria-expanded={open ? "true" : undefined}
+                          onClick={handleClick}
+                        >
+                          <img src={settings} />
+                        </Button>
+                        <Menu
+                          id="basic-menu"
+                          anchorEl={anchorEl}
+                          open={open}
+                          onClose={handleClose}
+                          MenuListProps={{
+                            "aria-labelledby": "basic-button",
+                          }}
+                          transformOrigin={{
+                            vertical: "top",
+                            horizontal: "right",
+                          }}
+                        >
+                          <div
+                            style={{
+                              border: "0.5px solid #eaeaea",
+                              borderRadius: 12,
+                              marginRight: 10,
+                            }}
+                          >
+                            <MenuItem
+                              style={{ padding: "10px 15px" }}
+                              onClick={handleClose}
+                            >
+                              Пожаловаться
+                            </MenuItem>
+                            <MenuItem
+                              style={{ padding: "10px 15px" }}
+                              onClick={handleClose}
+                            >
+                              Скрыть кандидата
+                            </MenuItem>
+                          </div>
+                        </Menu>
+                      </div>
+                    </Grid>
+                  </Grid>
+                  
+                </Grid>
+                  </Grid>
+                </Grid>
+                
+
+              </Grid>
+            </Grid>
+
+            {/* <Typography
               variant="h4"
               component="p"
               className={classes.mainPosition}
@@ -121,61 +330,61 @@ function Post({
               justifyContent="flex-start"
               style={{ paddingBottom: 15 }}
             >
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={4} md={3}>
                 <Typography variant="body1">
                   {fstName}, {absCurrentYears} лет
                 </Typography>
               </Grid>
-              <Grid item xs={9} sm={6} className={classes.cityBox}>
+              <Grid item xs={9} sm={5} md={4} className={classes.cityBox}>
                 <img src={marker}></img>
                 <span>Kyiv, Ukraine</span>
-              </Grid>
-              <Grid container justifyContent="flex-end">
+              </Grid> */}
+            {/* <Grid container justifyContent="flex-end">
                 <Grid item xs={12} sm={12} className={classes.secondPosition}>
                   <Typography variant="body2">
                     Координатор BALOX Agency - 4 мес.
                   </Typography>
                 </Grid>
-                <Grid item xs={12} sm={8} className={classes.secondPosition}>
+                <Grid item xs={12} sm={12} className={classes.secondPosition}>
                   <Typography variant="body2">
                     Координатор BALOX Agency - 4 мес.
                   </Typography>
                 </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
-        <Grid item xs="2">ss</Grid>
-
-        <Grid container alignItems="center" spacing={2}>
-          <Grid
-            item
-            xs={12}
-            sm={4}
-            style={{ display: "flex", alignItems: "center" }}
-          >
-            <div
-              style={{
-                width: "12px",
-                height: "12px",
-                backgroundColor: "#4CAF50",
-                borderRadius: "100%",
-                marginRight: 4,
-              }}
-            />
-            <Typography variant="subtitle1" style={{ color: "#4CAF50" }}>
-              Онлайн
-            </Typography>
-          </Grid>
-          <Grid item xs={12} sm={8}>
-            <Grid container alignItems="center">
-              <Grid item xs={8} sm={8}>
-                <Typography variant="subtitle1">
-                  Обновлено {id} минут назад
+              </Grid> */}
+            {/* <Grid
+                item
+                xs={12}
+                sm={4}
+                style={{ display: "flex", alignItems: "center" }}
+              >
+                <div
+                  style={{
+                    width: "12px",
+                    height: "12px",
+                    backgroundColor: "#4CAF50",
+                    borderRadius: "100%",
+                    marginRight: 4,
+                  }}
+                />
+                <Typography variant="subtitle1" style={{ color: "#4CAF50" }}>
+                  Онлайн
                 </Typography>
               </Grid>
+              <Grid item xs={12} sm={8}>
+                <Grid container alignItems="center">
+                  <Grid item xs={8} sm={8}>
+                    <Typography variant="subtitle1">
+                      Обновлено {id} минут назад
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </Grid> */}
+            {/* </Grid> */}
+          </Grid>
+        </Grid>
 
-              <Grid item sm={2}>
+        {/* <Grid container alignItems="center" style={{ flexFlow: "row-reverse" }}>
+          <Grid item sm={2}>
                 <div
                   style={{
                     width: 46,
@@ -254,9 +463,7 @@ function Post({
                   </Menu>
                 </div>
               </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
+        </Grid> */}
       </Grid>
     </Grid>
   );
