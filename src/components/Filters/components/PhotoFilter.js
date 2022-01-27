@@ -1,27 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 // import './App.css';
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "../../ResumeCard/ResumeCard.scss";
 import {
   getSummary as getSummaryAction,
-  deletePost as deletePostAction,
 } from "../../../redux/modules/posts";
-import Post from "../../Post";
 import { Container, Grid } from "@material-ui/core";
 import {
   Typography,
   FormControlLabel,
-  FormGroup,
   Switch,
 } from "@material-ui/core";
 import loudSpeaker from "../../../static/images/loudSpeaker.svg";
+import { getSummary } from "../../../redux/modules/posts";
 
 //ToggleFilter
-function PhotoFilter({ getSummary, withPhotos }) {
+
+export default  function PhotoFilter() {
   const [checked, setChecked] = React.useState(true);
+
+  const current_page = useSelector((state) => state.posts.current_page);
+  const dispatch = useDispatch();
+  
   const handleChange = (event) => {
     setChecked(event.target.checked);
-    getSummary(event.target.checked);
+
+    dispatch(getSummary({withPhotos: event.target.checked}));
   };
   //how to implement toggle react mui
 
@@ -30,7 +34,7 @@ function PhotoFilter({ getSummary, withPhotos }) {
       <Container>
         <Grid container justifyContent="space-between" alignItems="center">
           <Grid item style={{ display: "flex" }}>
-            <img src={loudSpeaker}></img>
+            <img src={loudSpeaker} alt="loudSpeaker"></img>
             <Typography
               variant="subtitle1"
               style={{ color: "#202020", paddingTop: 1, fontSize: 14 }}
@@ -49,6 +53,4 @@ function PhotoFilter({ getSummary, withPhotos }) {
   );
 }
 
-export default connect(({ posts }) => ({ posts: posts.posts }), {
-  getSummary: getSummaryAction,
-})(PhotoFilter);
+
