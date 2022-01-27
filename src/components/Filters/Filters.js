@@ -5,14 +5,13 @@ import "../ResumeCard/ResumeCard.scss";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   getSummary as getSummaryAction,
-  deletePost as deletePostAction,
 } from "../../redux/modules/posts";
-import Post from "../Post";
+
 import { Container, Grid } from "@material-ui/core";
 import {
   Typography,
 } from "@material-ui/core";
-import loudSpeaker from "../../static/images/loudSpeaker.svg";
+
 import AgeFilter from "./components/AgeFilter";
 import PhotoFilter from "./components/PhotoFilter";
 import SexFilter from "./components/SexFilter";

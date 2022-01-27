@@ -1,26 +1,24 @@
-import { Box, Container, Grid } from "@material-ui/core";
+import { Container, Grid, Divider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Link } from "@material-ui/core";
+
 import footerBg from "../../static/images/footerBg.svg";
 import { connect } from "react-redux";
-import {
-  getSummary as getSummaryAction,
-  deletePost as deletePostAction,
-} from "../../redux/modules/posts";
+import { getSummary as getSummaryAction } from "../../redux/modules/posts";
 import FooterLink from "./components/FooterLink";
-import SocialLink from "./components/SocialLink"
+import SocialLink from "./components/SocialLink";
+import Privacy from "./components/Privacy";
 //icons
-import twitter from "../../static/images/twitter.svg"
-import linkedin from "../../static/images/linkedin.svg"
-import facebook from "../../static/images/facebook.svg"
-import instagram from "../../static/images/instagram.svg"
-import youtube from "../../static/images/youtube.svg"
-import whatsapp from "../../static/images/whatsapp.svg"
-
+import twitter from "../../static/images/twitter.svg";
+import linkedin from "../../static/images/linkedin.svg";
+import facebook from "../../static/images/facebook.svg";
+import instagram from "../../static/images/instagram.svg";
+import youtube from "../../static/images/youtube.svg";
+import whatsapp from "../../static/images/whatsapp.svg";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
     backgroundImage: `url(${footerBg})`,
+    padding: "42px 0px",
     height: 333,
     backgroundSize: "cover",
   },
@@ -49,17 +47,20 @@ function Footer({ title }) {
         <Grid container justifyContent="space-evenly">
           <Grid item>
             <Grid container direction="column">
-              <FooterLink title="Другое"/>
-              <FooterLink title="Про Нас"/>
-              <FooterLink title="Блог"/>
+              <FooterLink title="Другое" />
+              <FooterLink title="Про Нас" />
+              <FooterLink title="Блог" />
             </Grid>
           </Grid>
           <Grid item>
             <Grid container direction="column">
-            <FooterLink href="https://pm-dt.com/" title="Сотрудничество с нами"/>
-            <FooterLink title="Реклама на сайте"/>
-            <FooterLink title="Партнерская программа"/>
-            <FooterLink title="Контакты"/>
+              <FooterLink
+                href="https://pm-dt.com/"
+                title="Сотрудничество с нами"
+              />
+              <FooterLink title="Реклама на сайте" />
+              <FooterLink title="Партнерская программа" />
+              <FooterLink title="Контакты" />
             </Grid>
           </Grid>
           <Grid item>
@@ -73,6 +74,10 @@ function Footer({ title }) {
             </Grid>
           </Grid>
         </Grid>
+      </Container>
+      <Divider />
+      <Container>
+        <Privacy />
       </Container>
     </div>
   );

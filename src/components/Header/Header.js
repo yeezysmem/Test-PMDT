@@ -1,13 +1,11 @@
-import { Box, Button, Container, Grid } from "@material-ui/core";
+import { Button, Container, Grid, Link, TextField, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Link, TextField } from "@material-ui/core";
 import headerBg from "../../static/images/headerBg.svg";
 import { connect } from "react-redux";
 import {
   getSummary as getSummaryAction,
-  deletePost as deletePostAction,
 } from "../../redux/modules/posts";
-import { spacing } from "@mui/system";
+
 import lang from "../../static/images/lang.svg";
 import dropDown from "../../static/images/dropDown.svg";
 
@@ -38,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   btn: {
     backgroundColor: "#FFF9E4",
     color: "#000",
-    padding: "14px 20px",
+    padding: "14px 14px",
     borderRadius: 8,
     fontWeight: 600,
 
@@ -106,9 +104,9 @@ function Header() {
         {/* <Grid item style={{ padding: "13px 33px" }}>
           <Grid container alignItems="center">
             <img src={lang} style={{cursor:"pointer"}} />
-            <typography variant="subtitle2" style={{fontSize:14, cursor:"pointer"}} className={classes.navLink}>
+            <Typography variant="subtitle2" style={{fontSize:14, cursor:"pointer"}} className={classes.navLink}>
               RU
-            </typography>
+            </Typography>
             <img src={dropDown} style={{cursor:"pointer"}}/>
             <Link href="#" variant="subtitle2" style={{paddingLeft:10}} className={classes.navLink}>
               Войти
@@ -132,7 +130,7 @@ function Header() {
               variant="standard"
               maxRows={4}
               className={classes.textField}
-              InputProps={{ classes }}
+               
             />
           </Grid>
           <Grid item xs={12} sm={2}>
@@ -142,10 +140,10 @@ function Header() {
               className={classes.textField}
               placeholder="Город"
               variant="standard"
-              InputProps={{ classes }}
+               
             />
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={2}>
             <Button fullWidth className={classes.btn}>
               Найти кандидатов
             </Button>

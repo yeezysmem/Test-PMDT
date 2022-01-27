@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 // import './App.css';
 import { connect } from "react-redux";
 import "../../ResumeCard/ResumeCard.scss";
 import {
   getSummary as getSummaryAction,
-  deletePost as deletePostAction,
 } from "../../../redux/modules/posts";
-import Post from "../../Post";
-import { Container, Grid } from "@material-ui/core";
 import {
+  Container,
+  Grid,
   Typography,
   FormControlLabel,
   FormGroup,
@@ -49,9 +48,12 @@ function ExperienceFilter() {
             direction="row"
             style={{ marginTop: 5 }}
           >
-            <Grid item xs={8} style={{display:"flex", alignItems:"center"}}>
-              <img src={mortarboard} style={{marginRight:5}} />
-              <Typography variant="subtitle1" style={{fontWeight:300,fontSize:14, color:"#5B5B5B"}}>
+            <Grid item xs={8} style={{ display: "flex", alignItems: "center" }}>
+              <img src={mortarboard} style={{ marginRight: 5 }} />
+              <Typography
+                variant="subtitle1"
+                style={{ fontWeight: 300, fontSize: 14, color: "#5B5B5B" }}
+              >
                 Только студенты
               </Typography>
             </Grid>
