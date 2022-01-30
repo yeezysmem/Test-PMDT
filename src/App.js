@@ -1,5 +1,5 @@
 import "./App.css";
-import ResumeCard from "./components/ResumeCard/ResumeCard";
+import PostsList from "./components/PostsList/PostsList";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "./theme";
 import { ThemeProvider } from "@material-ui/core/styles";
@@ -13,7 +13,7 @@ function App() {
       <Header />
       <CssBaseline />
       <Container>
-        <ResumeCard />
+        <PostsList />
         
       </Container>
       <Footer />
