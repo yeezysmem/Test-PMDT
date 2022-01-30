@@ -1,16 +1,9 @@
-
 // import './App.css';
-import { connect } from "react-redux";
-import "../ResumeCard/ResumeCard.scss";
+import React from "react";
+import "../PostsList/ResumeCard.scss";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  getSummary as getSummaryAction,
-} from "../../redux/modules/posts";
 
-import { Container, Grid } from "@material-ui/core";
-import {
-  Typography,
-} from "@material-ui/core";
+import { Container, Typography } from "@material-ui/core";
 
 import AgeFilter from "./components/AgeFilter";
 import PhotoFilter from "./components/PhotoFilter";
@@ -22,40 +15,30 @@ import EmploymentType from "./components/EmploymentType";
 import EducationFilter from "./components/EducationFilter";
 
 const useStyles = makeStyles((theme) => ({
-
   filters: {
-    [theme.breakpoints.up("sm")]: {
-      display: "block",
+    marginBottom: 34,
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 100,
     },
-    // [theme.breakpoints.down("sm")]: {
-    //   display: "none",
-    // },
   },
 }));
 
-
-function Filters() {
+export default function Filters() {
   const classes = useStyles();
 
   return (
-    <Grid item xs={12} sm={12} md={4} className={classes.filters}>
-      <Container>
-        <Typography variant="h4" component="h5" style={{marginBottom:34}}>
-          Фильтры
-        </Typography>
-        <PhotoFilter />
-        <AgeFilter />
-        <SexFilter />
-        <FeeFilter />
-        <ExperienceFilter />
-        <LanguageFilter />
-        <EmploymentType />
-        <EducationFilter />
-      </Container>
-    </Grid>
+    <Container>
+      <Typography variant="h4" component="h5" className={classes.filters}>
+        Фильтры
+      </Typography>
+      <PhotoFilter />
+      <AgeFilter />
+      <SexFilter />
+      <FeeFilter />
+      <ExperienceFilter />
+      <LanguageFilter />
+      <EmploymentType />
+      <EducationFilter />
+    </Container>
   );
 }
-
-export default connect(({ posts }) => ({ posts: posts.posts }), {
-  getSummary: getSummaryAction,
-})(Filters);

@@ -1,9 +1,6 @@
 import React from "react";
 // import './App.css';
-import { connect } from "react-redux";
-import {
-  getSummary as getSummaryAction,
-} from "../../../redux/modules/posts";
+
 import { Container, Grid, Slider, Divider,Typography } from "@material-ui/core";
 
 
@@ -11,7 +8,7 @@ function valuetext(value) {
   return `${value}`;
 }
 
-function AgeFilter() {
+export default function AgeFilter() {
   const [value, setValue] = React.useState([20,40]);
 
   const handleChange = (event, newValue) => {
@@ -24,7 +21,6 @@ function AgeFilter() {
           Возраст
         </Typography>
         <Divider light style={{marginBottom:30}} />
-        {/* <Grid container justifyContent="space-around" alignItems="center"> */}
           <Slider
             getAriaLabel={() => "Age range"}
             value={value}
@@ -42,12 +38,7 @@ function AgeFilter() {
               <Grid item style={{padding: "10px 40px", border:"1px solid #EAEAEA"}}>{value[1]}</Grid>
               <Grid item>грн</Grid>
           </Grid>
-        {/* </Grid> */}
       </Container>
     </Grid>
   );
 }
-
-export default connect(({ posts }) => ({ posts: posts.posts }), {
-  getSummary: getSummaryAction,
-})(AgeFilter);

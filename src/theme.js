@@ -101,9 +101,7 @@ export const theme = createTheme({
     shadows: ["none"],
   
     overrides: {
-      MuiToggleButton: {
-
-      },
+      
       MuiSwitch: {
         switchBase: {
           // Controls default (unchecked) color for the thumb
@@ -146,21 +144,47 @@ export const theme = createTheme({
       },
     },
     
-      MuiInput: {
-        input: {
-          color:"#fff",
-          borderColor:"green",
-          "&::placeholder": {
-            color:"#fff"
-          },
-          
-        }
-      },
       MuiCssBaseline: {
         "@global": {
+          ".MuiAccordionSummary-root": {
+            padding:"0 !important",
+            margin:"0 !important",
+           
+           
+          },
+          ".MuiAccordionSummary-content": {
+            margin:"0 !important",
+            
+          },
+          ".Mui-expanded": {
+            margin:"0 !important"
+          },
           ".MuiToggleButton-root": {
-            borderRadius: 2,
+            borderRadius: 8,
             border:"1px solid #000046 !important",
+            color:"#000046 !important", 
+            textTransform:"capitalize !important",
+            fontSize:14,
+           "&.Mui-selected": {
+              background:"#000046 !important",
+              color:"#fff !important", 
+              
+           },
+
+          },
+          ".MuiInput-input": {
+            color:"#fff !important"
+          },
+          ".MuiInput-root": {
+            "&:after": {
+              border:"none !important"
+            },
+            "&:before": {
+              border:"none !important"
+            }
+          },
+          ".Mui-selected": {
+            background:"#000046"
           },
           "@font-face": "Montserrat",
           html: {

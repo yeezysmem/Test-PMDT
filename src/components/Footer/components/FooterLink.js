@@ -1,17 +1,19 @@
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Link } from "@material-ui/core";
-import { connect } from "react-redux";
-import {
-  getSummary as getSummaryAction,
-} from "../../../redux/modules/posts";
 
 const useStyles = makeStyles((theme) => ({
   footerLink: {
     color: "#fff",
+    fontSize:14,
+    "&:hover": {
+      fontWeight:600,
+      textDecoration:"none"
+    }
   },
+  
 }));
 
-function FooterLink({ xs, sm, title, href="#" }) {
+export default function FooterLink({ xs, sm, title, href="#" }) {
   const classes = useStyles();
   return (
     <Grid item xs={xs} sm={sm}>
@@ -22,6 +24,3 @@ function FooterLink({ xs, sm, title, href="#" }) {
   );
 }
 
-export default connect(({ posts }) => ({ posts: posts.posts }), {
-  getSummary: getSummaryAction,
-})(FooterLink);

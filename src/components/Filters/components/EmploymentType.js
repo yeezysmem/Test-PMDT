@@ -1,10 +1,8 @@
 import React from "react";
 // import './App.css';
-import { connect } from "react-redux";
-import "../../ResumeCard/ResumeCard.scss";
-import {
-  getSummary as getSummaryAction,
-} from "../../../redux/modules/posts";
+ 
+import "../../PostsList/ResumeCard.scss";
+ 
 import {
   Container,
   Grid,
@@ -15,7 +13,7 @@ import {
   Divider,
 } from "@material-ui/core";
 
-function EmploymentType() {
+export default function EmploymentType() {
   return (
     <Grid item xs={12} style={{ marginBottom: 55 }}>
       <Container>
@@ -24,28 +22,70 @@ function EmploymentType() {
         </Typography>
         <Divider light style={{ marginBottom: 4 }} />
         <Grid container justifyContent="flex-start" alignItems="center">
-          <FormGroup>
-            <FormControlLabel
-              control={<Checkbox />}
-              label={
-                <Grid container>
-                  <Grid item>Полная занятость</Grid>
-                  <Grid item>34567</Grid>
+          <Grid item xs={12}>
+            <FormGroup>
+              <Grid container alignItems="center">
+                <Grid item xs={12}>
+                  <Grid
+                    container
+                    alignItems="center"
+                    justifyContent="flex-start"
+                  >
+                    <Grid item xs={1}>
+                      <FormControlLabel control={<Checkbox />} />
+                    </Grid>
+                    <Grid item xs={9}>
+                      Полная занятость
+                    </Grid>
+                    <Grid item >
+                      34567
+                    </Grid>
+                  </Grid>
                 </Grid>
-              }
-            />
-            <FormControlLabel
-              control={<Checkbox />}
-              label="Неполная занятость"
-            />
-            <FormControlLabel control={<Checkbox />} label="Удаленная работа" />
-          </FormGroup>
+              </Grid>
+              <Grid container alignItems="center">
+                <Grid item xs={12}>
+                  <Grid
+                    container
+                    alignItems="center"
+                    justifyContent="flex-start"
+                  >
+                    <Grid item xs={1}>
+                      <FormControlLabel control={<Checkbox />} />
+                    </Grid>
+                    <Grid item xs={9}>
+                      Неполная занятость
+                    </Grid>
+                    <Grid item >
+                    876
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid container alignItems="center">
+                <Grid item xs={12}>
+                  <Grid
+                    container
+                    alignItems="center"
+                    justifyContent="flex-start"
+                  >
+                    <Grid item xs={1}>
+                      <FormControlLabel control={<Checkbox />} />
+                    </Grid>
+                    <Grid item xs={9}>
+                    Удаленная работа
+                    </Grid>
+                    <Grid item >
+                    1234
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </FormGroup>
+          </Grid>
         </Grid>
       </Container>
     </Grid>
   );
 }
 
-export default connect(({ posts }) => ({ posts: posts.posts }), {
-  getSummary: getSummaryAction,
-})(EmploymentType);

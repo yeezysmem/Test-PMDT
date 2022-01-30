@@ -1,10 +1,8 @@
 import React from "react";
 // import './App.css';
-import { connect } from "react-redux";
-import "../../ResumeCard/ResumeCard.scss";
-import {
-  getSummary as getSummaryAction,
-} from "../../../redux/modules/posts";
+ 
+import "../../PostsList/ResumeCard.scss";
+ 
 import {
   Container,
   Grid,
@@ -15,27 +13,85 @@ import {
   Divider,
 } from "@material-ui/core";
 
-function EducationFilter() {
+export default function EducationFilter() {
   return (
-    <Grid item xs={12}>
+    <Grid item xs={12} style={{ marginBottom: 55 }}>
       <Container>
         <Typography variant="h5" component="h5" style={{ marginBottom: 12 }}>
           Образование
         </Typography>
         <Divider light style={{ marginBottom: 4 }} />
-        <Grid container justifyContent="space-around" alignItems="center">
-          <Grid item xs={12} style={{ display: "flex", alignItems: "center" }}>
+        <Grid container justifyContent="flex-start" alignItems="center">
+          <Grid item xs={12}>
             <FormGroup>
-              <FormControlLabel control={<Checkbox />} label="Высшее" />
-              <FormControlLabel
-                control={<Checkbox />}
-                label="Неоконченное высшее"
-              />
-              <FormControlLabel
-                control={<Checkbox />}
-                label="Средне-специальное"
-              />
-              <FormControlLabel control={<Checkbox />} label="Среднее" />
+              <Grid container alignItems="center">
+                <Grid item xs={12}>
+                  <Grid
+                    container
+                    alignItems="center"
+                    justifyContent="flex-start"
+                  >
+                    <Grid item xs={1}>
+                      <FormControlLabel control={<Checkbox />} />
+                    </Grid>
+                    <Grid item xs={9}>
+                      Высшее
+                    </Grid>
+                    <Grid item>34567</Grid>
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid container alignItems="center">
+                <Grid item xs={12}>
+                  <Grid
+                    container
+                    alignItems="center"
+                    justifyContent="flex-start"
+                  >
+                    <Grid item xs={1}>
+                      <FormControlLabel control={<Checkbox />} />
+                    </Grid>
+                    <Grid item xs={9}>
+                      Неоконченное высшее
+                    </Grid>
+                    <Grid item>876</Grid>
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid container alignItems="center">
+                <Grid item xs={12}>
+                  <Grid
+                    container
+                    alignItems="center"
+                    justifyContent="flex-start"
+                  >
+                    <Grid item xs={1}>
+                      <FormControlLabel control={<Checkbox />} />
+                    </Grid>
+                    <Grid item xs={9}>
+                      Средне-специальное
+                    </Grid>
+                    <Grid item>1234</Grid>
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid container alignItems="center">
+                <Grid item xs={12}>
+                  <Grid
+                    container
+                    alignItems="center"
+                    justifyContent="flex-start"
+                  >
+                    <Grid item xs={1}>
+                      <FormControlLabel control={<Checkbox />} />
+                    </Grid>
+                    <Grid item xs={9}>
+                      Среднее
+                    </Grid>
+                    <Grid item>8764</Grid>
+                  </Grid>
+                </Grid>
+              </Grid>
             </FormGroup>
           </Grid>
         </Grid>
@@ -44,6 +100,4 @@ function EducationFilter() {
   );
 }
 
-export default connect(({ posts }) => ({ posts: posts.posts }), {
-  getSummary: getSummaryAction,
-})(EducationFilter);
+ 

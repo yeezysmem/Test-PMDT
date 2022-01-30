@@ -1,48 +1,36 @@
 import React from "react";
 // import './App.css';
-import { connect } from "react-redux";
-import { makeStyles } from "@material-ui/core/styles";
-import "../../ResumeCard/ResumeCard.scss";
-import {
-  getSummary as getSummaryAction,
-} from "../../../redux/modules/posts";
+import { makeStyles, styled } from "@material-ui/core/styles";
+import "../../PostsList/ResumeCard.scss";
 
 import { Container, Grid, Typography, Divider } from "@material-ui/core";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
+const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
+  "& .MuiToggleButtonGroup-grouped": {
+    border: 0,
+    "&.Mui-disabled": {
+      border: 0,
+    },
+    "&:not(:first-of-type)": {
+      borderRadius: 0,
+    },
+    "&:first-of-type": {
+      borderRadius: 0,
+    },
+  },
+}));
 
 const useStyles = makeStyles((theme) => ({
   btn: {
     background: "#fff",
-    color:"#202020",
-    border:"none",
+    color: "#202020",
+    border: "none",
   },
-  Toggle: {
-    '&$selected': {
-      background:"#000",
-      '& + &': {
-        borderLeft: 0,
-        marginLeft: 0,
-        background:"#000"
-      },
-    }
-  }
-  //   subCatItem: {
-  //     "&::after": {
-  //       content: " ' ' ",
-  //       width: 7,
-  //       height: 26,
-  //       backgroundImage: `url(${triangle})`,
-  //       backgroundPosition: "center",
-  //       backgroundRepeat: "no-repeat",
-  //       position: "absolute",
-  //       left: 0,
-  //     },
-  //   },
 }));
 
-function SexFilter() {
+export default function SexFilter() {
   const [alignment, setAlignment] = React.useState("Любой");
   const classes = useStyles();
   const handleChange = (event, newAlignment) => {
@@ -50,32 +38,25 @@ function SexFilter() {
   };
 
   return (
-    <Grid item xs={12} style={{marginBottom:55}}>
+    <Grid item xs={12} style={{ marginBottom: 55 }}>
       <Container>
-        <Typography variant="h5" component="h5" style={{marginBottom:12}}>
+        <Typography variant="h5" component="h5" style={{ marginBottom: 12 }}>
           Пол
         </Typography>
-        <Divider light style={{marginBottom:24}} />
-        <ToggleButtonGroup
-        //   color="secondary"
+        <Divider light style={{ marginBottom: 24 }} />
+        <StyledToggleButtonGroup
           className={classes.btn}
           value={alignment}
           exclusive
           fullWidth
           size="medium"
-          color="primary"
           onChange={handleChange}
-          
         >
           <ToggleButton value="Любой">Любой</ToggleButton>
           <ToggleButton value="Мужчины">Мужчины</ToggleButton>
           <ToggleButton value="Женщины">Женщины</ToggleButton>
-        </ToggleButtonGroup>
+        </StyledToggleButtonGroup>
       </Container>
     </Grid>
   );
 }
-
-export default connect(({ posts }) => ({ posts: posts.posts }), {
-  getSummary: getSummaryAction,
-})(SexFilter);

@@ -1,10 +1,7 @@
 import React from "react";
-// import './App.css';
-import { useDispatch, useSelector } from "react-redux";
-import "../../ResumeCard/ResumeCard.scss";
-import {
-  getSummary as getSummaryAction,
-} from "../../../redux/modules/posts";
+import { useDispatch } from "react-redux";
+import "../../PostsList/ResumeCard.scss";
+
 import { Container, Grid } from "@material-ui/core";
 import {
   Typography,
@@ -14,12 +11,9 @@ import {
 import loudSpeaker from "../../../static/images/loudSpeaker.svg";
 import { getSummary } from "../../../redux/modules/posts";
 
-//ToggleFilter
 
 export default  function PhotoFilter() {
   const [checked, setChecked] = React.useState(true);
-
-  const current_page = useSelector((state) => state.posts.current_page);
   const dispatch = useDispatch();
   
   const handleChange = (event) => {
@@ -27,7 +21,6 @@ export default  function PhotoFilter() {
 
     dispatch(getSummary({withPhotos: event.target.checked}));
   };
-  //how to implement toggle react mui
 
   return (
     <Grid item xs={12} style={{ marginBottom: 55 }}>

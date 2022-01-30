@@ -14,9 +14,7 @@ const defaultState = {
   previous: "",
 };
 
-/* 
-  { type: GET_POSTS, payload: {...} }
-*/
+
 export default function postReducer(state = defaultState, { type, payload }) {
   switch (type) {
     case GET_SUMMARY:

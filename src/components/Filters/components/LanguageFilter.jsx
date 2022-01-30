@@ -1,7 +1,7 @@
 import React from "react";
 // import './App.css';
 import { connect } from "react-redux";
-import "../../ResumeCard/ResumeCard.scss";
+import "../../PostsList/ResumeCard.scss";
 import {
   getSummary as getSummaryAction,
 } from "../../../redux/modules/posts";

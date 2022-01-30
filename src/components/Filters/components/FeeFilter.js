@@ -1,10 +1,5 @@
 import React from "react";
-// import './App.css';
-import { connect } from "react-redux";
-import "../../ResumeCard/ResumeCard.scss";
-import {
-  getSummary as getSummaryAction,
-} from "../../../redux/modules/posts";
+
 
 import { Container, Grid, Slider, Divider,Typography } from "@material-ui/core";
 
@@ -13,7 +8,7 @@ function valuetext(value) {
   return `${value}`;
 }
 
-function FeeFilter() {
+export default function FeeFilter() {
   const [value, setValue] = React.useState([1800,8980]);
 
   const handleChange = (event, newValue) => {
@@ -49,6 +44,3 @@ function FeeFilter() {
   );
 }
 
-export default connect(({ posts }) => ({ posts: posts.posts }), {
-  getSummary: getSummaryAction,
-})(FeeFilter);
