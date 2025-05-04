@@ -32,7 +32,7 @@ export default  function PhotoFilter() {
               variant="subtitle1"
               style={{ color: "#202020", paddingTop: 1, fontSize: 14 }}
             >
-              Только с фотографией
+               Only with a photo
             </Typography>
           </Grid>
           <Grid item>

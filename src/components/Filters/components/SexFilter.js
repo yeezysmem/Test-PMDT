@@ -41,7 +41,7 @@ export default function SexFilter() {
     <Grid item xs={12} style={{ marginBottom: 55 }}>
       <Container>
         <Typography variant="h5" component="h5" style={{ marginBottom: 12 }}>
-          Пол
+          Gender
         </Typography>
         <Divider light style={{ marginBottom: 24 }} />
         <StyledToggleButtonGroup
@@ -52,9 +52,9 @@ export default function SexFilter() {
           size="medium"
           onChange={handleChange}
         >
-          <ToggleButton value="Любой">Любой</ToggleButton>
-          <ToggleButton value="Мужчины">Мужчины</ToggleButton>
-          <ToggleButton value="Женщины">Женщины</ToggleButton>
+          <ToggleButton value="Any">Any</ToggleButton>
+          <ToggleButton value="Men">Men</ToggleButton>
+          <ToggleButton value="Women">Women</ToggleButton>
         </StyledToggleButtonGroup>
       </Container>
     </Grid>

@@ -29,7 +29,7 @@ export default function Filters() {
   return (
     <Container>
       <Typography variant="h4" component="h5" className={classes.filters}>
-        Фильтры
+      Filters
       </Typography>
       <PhotoFilter />
       <AgeFilter />

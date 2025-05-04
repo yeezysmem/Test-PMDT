@@ -57,9 +57,9 @@ export default function Footer({ title }) {
             <Grid container>
               <Grid item xs={12}>
                 <Grid container direction="column" className={classes.mobileCenter}>
-                  <FooterLink title="Другое" />
-                  <FooterLink title="Про Нас" />
-                  <FooterLink title="Блог" />
+                  <FooterLink title="Other" />
+                  <FooterLink title="About Us" />
+                  <FooterLink title="Blog" />
                 </Grid>
               </Grid>
             </Grid>
@@ -69,12 +69,12 @@ export default function Footer({ title }) {
               <Grid item xs={12}>
                 <Grid container direction="column" className={classes.mobileCenter}>
                   <FooterLink
-                    href="https://pm-dt.com/"
-                    title="Сотрудничество с нами"
+                    href="https://github.com/yeezysmem"
+                    title="Cooperation with us"
                   />
-                  <FooterLink title="Реклама на сайте" />
-                  <FooterLink title="Партнерская программа" />
-                  <FooterLink title="Контакты" />
+                  <FooterLink title="Website advertising" />
+                  <FooterLink title="Partnership Program" />
+                  <FooterLink title="Contacts" />
                 </Grid>
               </Grid>
             </Grid>

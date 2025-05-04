@@ -18,7 +18,7 @@ export default function AgeFilter() {
     <Grid item xs={12} style={{marginBottom:55}}>
       <Container>
         <Typography variant="h5" component="h5" style={{marginBottom:12}}>
-          Возраст
+        Age
         </Typography>
         <Divider light style={{marginBottom:30}} />
           <Slider
@@ -32,11 +32,11 @@ export default function AgeFilter() {
             style={{marginBottom:15}}
           />
           <Grid container direction="row" alignItems="center" justifyContent="space-between">
-              <Grid item>от</Grid>
+              <Grid item>from</Grid>
               <Grid item style={{padding: "10px 40px", border:"1px solid #EAEAEA"}}>{value[0]}</Grid>
-              <Grid item>до</Grid>
+              <Grid item>to</Grid>
               <Grid item style={{padding: "10px 40px", border:"1px solid #EAEAEA"}}>{value[1]}</Grid>
-              <Grid item>грн</Grid>
+              <Grid item>UAH</Grid>
           </Grid>
       </Container>
     </Grid>

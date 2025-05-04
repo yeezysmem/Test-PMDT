@@ -156,7 +156,7 @@ function Post({
                     <Grid container alignItems="center">
                       <Grid item xs={8} sm={8}>
                         <Typography variant="subtitle1">
-                          Обновлено {id} минут назад
+                          updated {id} minutes ago
                         </Typography>
                       </Grid>
                     </Grid>
@@ -224,7 +224,7 @@ function Post({
                   <Grid container alignItems="center">
                     <Grid item xs={9} sm={8}>
                       <Typography variant="subtitle1">
-                        Обновлено {id} минут назад
+                        updated {id} minutes ago
                       </Typography>
                     </Grid>
                     <Grid item xs={3}>
@@ -374,7 +374,7 @@ function Post({
                 <Grid container alignItems="center">
                   <Grid item xs={8} sm={8}>
                     <Typography variant="subtitle1">
-                      Обновлено {id} минут назад
+                      updated {id} minutes ago
                     </Typography>
                   </Grid>
                 </Grid>

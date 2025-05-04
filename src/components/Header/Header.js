@@ -156,11 +156,11 @@ export default function Header() {
       >
         <Grid className={classes.linkContainer} item>
           <Link href="#" variant="subtitle2" className={classes.navLink}>
-            Соискатель
+          Applicant
           </Link>
           <span className={classes.horisontalDivider} />
           <Link href="#" variant="subtitle2" className={classes.navLinkCurrent}>
-            Работодатель
+          Employer
           </Link>
           <span className={classes.horisontalDivider} />
           <Link href="#" variant="subtitle2" className={classes.navLink}>
@@ -179,7 +179,7 @@ export default function Header() {
               style={{ fontSize: 14, cursor: "pointer" }}
               className={classes.navLink}
             >
-              RU
+              ENG
             </Typography>
             <img src={dropDown} style={{ cursor: "pointer" }} />
             <Link
@@ -188,7 +188,7 @@ export default function Header() {
               style={{ paddingLeft: 10 }}
               className={classes.logIn}
             >
-              Войти
+              Sign in
             </Link>
           </Grid>
         </Grid>
@@ -197,7 +197,7 @@ export default function Header() {
         <Grid item style={{ display: "flex", justifyContent: "center" }}>
           <img src={user} style={{ marginRight: 10 }} />
           <Typography style={{ color: "#fff", fontSize: 14, fontWeight: 500 }}>
-            Юра Марченко
+          Yura Marchenko
           </Typography>
         </Grid>
       </Grid>
@@ -214,7 +214,7 @@ export default function Header() {
             <Input
               id="input-with-icon-adornment"
               fullWidth
-              placeholder="На какую должность вы ищете кандидата?"
+              placeholder="What position are you looking for a candidate to fill?"
               className={classes.textField}
               startAdornment={
                 <InputAdornment position="start">
@@ -228,7 +228,7 @@ export default function Header() {
               id="input-with-icon-adornment"
               className={classes.textField}
               fullWidth
-              placeholder="Город"
+              placeholder="City"
               startAdornment={
                 <InputAdornment position="start">
                   <RoomOutlinedIcon style={{ color: "#fff" }} />
@@ -238,7 +238,7 @@ export default function Header() {
           </Grid>
           <Grid item xs={12} sm={12} md={3}>
             <Button fullWidth className={classes.btn}>
-              Найти кандидатов
+            Find candidates
             </Button>
           </Grid>
         </Grid>

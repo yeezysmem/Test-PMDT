@@ -26,15 +26,14 @@ function LanguageFilter() {
     <Grid item xs={12}  style={{marginBottom:55}}>
       <Container>
         <Typography variant="h5" component="h5" style={{marginBottom:12}}>
-          Владение языками
+        Language skills
         </Typography>
         <Divider light />
-        <LangFilterItem langName="Английский" img={uk} />
-        <LangFilterItem langName="Русский" img={ru} />
-        <LangFilterItem langName="Украинский" img={ua} />
-        <LangFilterItem langName="Немецкий" img={ge} />
-        <LangFilterItem langName="Польский" img={po} />
-        <LangFilterItem langName="Испанский" img={ps} />
+        <LangFilterItem langName="English" img={uk} />
+        <LangFilterItem langName="Ukrainian" img={ua} />
+        <LangFilterItem langName="German" img={ge} />
+        <LangFilterItem langName="Polish" img={po} />
+        <LangFilterItem langName="Spanish" img={ps} />
       </Container>
     </Grid>
   );

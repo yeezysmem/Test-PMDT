@@ -9,9 +9,11 @@ export default function PostPositions(pos = "Nameee") {
     <div>
       {newArr.map((item, i) =>
         item.desiredposition.slice(0, 2).map((pos) => {
+          const positionName = pos.position.split(",")[0].trim();
+          
           return (
             <Typography variant="body1" component="p" key={pos.id}>
-              {pos.position}
+              {positionName} 
             </Typography>
           );
         })

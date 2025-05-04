@@ -185,7 +185,7 @@ export default function Post({
                 <Grid container>
                   <Grid item xs={12} sm={4} md={4}>
                     <Typography variant="body1">
-                      {fstName}, {absCurrentYears} лет
+                      {fstName}, {absCurrentYears} years
                     </Typography>
                   </Grid>
                   <Grid item xs={9} sm={5} md={6} className={classes.cityBox}>
@@ -205,7 +205,7 @@ export default function Post({
                     <Grid container justifyContent="flex-start" alignItems="center">
                       <Grid item xs={8} sm={9}>
                         <Typography variant="subtitle1">
-                          Обновлено {id} минут назад
+                          updated {id} minutes ago
                         </Typography>
                       </Grid>
                     </Grid>
@@ -229,7 +229,7 @@ export default function Post({
                       variant="subtitle1"
                       style={{ color: "#4CAF50" }}
                     >
-                      Онлайн
+                      Online
                     </Typography>
                   </Grid>
                 </Grid>
@@ -282,13 +282,13 @@ export default function Post({
                         style={{ padding: "10px 15px" }}
                         onClick={handleClose}
                       >
-                        Пожаловаться
+                        Report
                       </MenuItem>
                       <MenuItem
                         style={{ padding: "10px 15px" }}
                         onClick={handleClose}
                       >
-                        Скрыть кандидата
+                        Hide candidat
                       </MenuItem>
                     </div>
                   </Menu>
@@ -331,7 +331,7 @@ export default function Post({
                   <Grid container alignItems="center">
                     <Grid item xs={9} sm={9} md={8}>
                       <Typography variant="subtitle1">
-                        Обновлено {id} минут назад
+                        updated {id} minutes ago
                       </Typography>
                     </Grid>
                     <Grid item xs={3}>
@@ -384,13 +384,13 @@ export default function Post({
                                   style={{ padding: "10px 15px" }}
                                   onClick={handleClose}
                                 >
-                                  Пожаловаться
+                                  Report
                                 </MenuItem>
                                 <MenuItem
                                   style={{ padding: "10px 15px" }}
                                   onClick={handleClose}
                                 >
-                                  Скрыть кандидата
+                                  Hide candidat
                                 </MenuItem>
                               </div>
                             </Menu>

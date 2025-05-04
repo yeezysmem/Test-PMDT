@@ -19,7 +19,7 @@ export default function ExperienceFilter() {
     <Grid item xs={12} style={{ marginBottom: 55 }}>
       <Container>
         <Typography variant="h5" component="h5" style={{ marginBottom: 12 }}>
-          Образование
+        Formation
         </Typography>
         <Divider light style={{ marginBottom: 4 }} />
         <Grid container justifyContent="flex-start" alignItems="center">
@@ -36,7 +36,7 @@ export default function ExperienceFilter() {
                       <FormControlLabel control={<Checkbox />} />
                     </Grid>
                     <Grid item xs={9}>
-                      Без опыта
+                    No experience
                     </Grid>
                     <Grid item>603</Grid>
                   </Grid>
@@ -53,7 +53,7 @@ export default function ExperienceFilter() {
                       <FormControlLabel control={<Checkbox />} />
                     </Grid>
                     <Grid item xs={9}>
-                      До 1 года
+                    Up to 1 year
                     </Grid>
                     <Grid item>603</Grid>
                   </Grid>
@@ -70,7 +70,7 @@ export default function ExperienceFilter() {
                       <FormControlLabel control={<Checkbox />} />
                     </Grid>
                     <Grid item xs={9}>
-                      От 1 до 2 лет
+                    1 to 2 years old
                     </Grid>
                     <Grid item>603</Grid>
                   </Grid>
@@ -87,7 +87,7 @@ export default function ExperienceFilter() {
                       <FormControlLabel control={<Checkbox />} />
                     </Grid>
                     <Grid item xs={9}>
-                      От 2 до 5 лет
+                    2 to 5 years old
                     </Grid>
                     <Grid item>603</Grid>
                   </Grid>
@@ -104,7 +104,7 @@ export default function ExperienceFilter() {
                       <FormControlLabel control={<Checkbox />} />
                     </Grid>
                     <Grid item xs={9}>
-                      От 5 до 10 лет
+                    5 to 10 years
                     </Grid>
                     <Grid item>603</Grid>
                   </Grid>
@@ -121,7 +121,7 @@ export default function ExperienceFilter() {
                       <FormControlLabel control={<Checkbox />} />
                     </Grid>
                     <Grid item xs={9}>
-                      Более 10 лет
+                    More than 10 years
                     </Grid>
                     <Grid item>603</Grid>
                   </Grid>
@@ -145,7 +145,7 @@ export default function ExperienceFilter() {
                   variant="subtitle1"
                   style={{ fontWeight: 300, fontSize: 14, color: "#5B5B5B" }}
                 >
-                  Только студенты
+                  Students only
                 </Typography>
               </Grid>
               <Grid item xs={2}>

@@ -124,7 +124,7 @@ export default function ResumeCard(props) {
   return (
     <Container>
       <Typography variant="h3" component="h3" className={classes.pageTitle}>
-        Мы подобрали <span style={{ color: "#0096C7" }}>451 642</span> резюме
+      We've selected <span style={{ color: "#0096C7" }}>451 642</span> resumes
       </Typography>
       <Divider className={classes.divider} />
       <Grid container alignItems="center">
@@ -134,7 +134,7 @@ export default function ResumeCard(props) {
             component="p"
             className={classes.pageSubtitle}
           >
-            Резюме продавец консультант во Всей Украине
+            Resume sales consultant in All Ukraine
           </Typography>
         </Grid>
         <Grid item xs={12} sm={12} md={2} className={classes.menuItemBox}>
@@ -149,16 +149,16 @@ export default function ResumeCard(props) {
                   input={<BootstrapInput />}
                 >
                   <MenuItem className={classes.menuItem} value={10}>
-                    За неделю
+                  In a week
                   </MenuItem>
                   <MenuItem className={classes.menuItem} value={20}>
-                    За месяц
+                  In a month
                   </MenuItem>
                   <MenuItem className={classes.menuItem} value={30}>
-                    За пол года
+                  In six months
                   </MenuItem>
                   <MenuItem className={classes.menuItem} value={40}>
-                    За все время
+                  In all that time.
                   </MenuItem>
                 </Select>
               </FormControl>

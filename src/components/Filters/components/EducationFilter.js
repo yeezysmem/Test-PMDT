@@ -18,7 +18,7 @@ export default function EducationFilter() {
     <Grid item xs={12} style={{ marginBottom: 55 }}>
       <Container>
         <Typography variant="h5" component="h5" style={{ marginBottom: 12 }}>
-          Образование
+          Education
         </Typography>
         <Divider light style={{ marginBottom: 4 }} />
         <Grid container justifyContent="flex-start" alignItems="center">
@@ -35,7 +35,7 @@ export default function EducationFilter() {
                       <FormControlLabel control={<Checkbox />} />
                     </Grid>
                     <Grid item xs={9}>
-                      Высшее
+                    Highest
                     </Grid>
                     <Grid item>34567</Grid>
                   </Grid>
@@ -52,7 +52,7 @@ export default function EducationFilter() {
                       <FormControlLabel control={<Checkbox />} />
                     </Grid>
                     <Grid item xs={9}>
-                      Неоконченное высшее
+                    Unfinished higher education
                     </Grid>
                     <Grid item>876</Grid>
                   </Grid>
@@ -69,7 +69,7 @@ export default function EducationFilter() {
                       <FormControlLabel control={<Checkbox />} />
                     </Grid>
                     <Grid item xs={9}>
-                      Средне-специальное
+                    High school
                     </Grid>
                     <Grid item>1234</Grid>
                   </Grid>
@@ -86,7 +86,7 @@ export default function EducationFilter() {
                       <FormControlLabel control={<Checkbox />} />
                     </Grid>
                     <Grid item xs={9}>
-                      Среднее
+                      Secondary
                     </Grid>
                     <Grid item>8764</Grid>
                   </Grid>

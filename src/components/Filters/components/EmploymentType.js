@@ -18,7 +18,7 @@ export default function EmploymentType() {
     <Grid item xs={12} style={{ marginBottom: 55 }}>
       <Container>
         <Typography variant="h5" component="h5" style={{ marginBottom: 12 }}>
-          Тип занятости
+        Type of employment
         </Typography>
         <Divider light style={{ marginBottom: 4 }} />
         <Grid container justifyContent="flex-start" alignItems="center">
@@ -35,7 +35,7 @@ export default function EmploymentType() {
                       <FormControlLabel control={<Checkbox />} />
                     </Grid>
                     <Grid item xs={9}>
-                      Полная занятость
+                    Full-time employment
                     </Grid>
                     <Grid item >
                       34567
@@ -54,7 +54,7 @@ export default function EmploymentType() {
                       <FormControlLabel control={<Checkbox />} />
                     </Grid>
                     <Grid item xs={9}>
-                      Неполная занятость
+                    Part-time employment
                     </Grid>
                     <Grid item >
                     876
@@ -73,7 +73,7 @@ export default function EmploymentType() {
                       <FormControlLabel control={<Checkbox />} />
                     </Grid>
                     <Grid item xs={9}>
-                    Удаленная работа
+                    Remote work
                     </Grid>
                     <Grid item >
                     1234

@@ -14,7 +14,6 @@ function App() {
       <CssBaseline />
       <Container>
         <PostsList />
-        
       </Container>
       <Footer />
     </ThemeProvider>
