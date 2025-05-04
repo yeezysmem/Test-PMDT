@@ -1,33 +1,22 @@
-## Таски
+## The assignment was
 
 **https://www.figma.com/file/XfBJaCIEzMdQTWINKNUgX8/Test_PM?node-id=142%3A20814**
 
-Нужно сверстать предоставленную страницу, подключить получение резюме по API и один фильтр "Только с фотографией" . 
-Остальние фильтры не нужно подключать к API, только сверстать. 
+We need to layout the provided page, connect the receipt of resumes via API and one filter “Only with photo”. 
+The rest of the filters do not need to be connected to the API, only the layout.
 
-Необходимо использовать Redux и можно использовать любые дополнительные библиотеки, единственное - не нужно перегружать проект лишним.
+It is necessary to use Redux and you can use any additional libraries, the only thing is that you do not need to overload the project with unnecessary things.
 
-Итог работы нужно предоставить в виде ссылки на git репозиторий.
+The result of the work should be provided as a link to the git repository.
 
 ### API:
-**Получение вакансий (GET):** 
+**(GET):** 
 http://135.181.30.244:27007/api/summaries/
 
-### Фильтр "Только с фотографией" (GET):
-http://135.181.30.244:27007/api/summaries/?photo=true
 
-(Для примера:
-?photo=true - только с фото
-?photo=false - без фото
-)
+## Comments
+I used MUI, stylized with makeStyles, also there is a setting for Redux DevTools Extension in the browser.
+in the post update status as a value I used post id, the number of full years including the current year was obtained with the help of date-fns library (not hardcoded)
+In the endpoint I didn't find the field with the city so I hardcoded it as on the layout.
 
-
-## Коментарии 
-Использовал MUI, стилизировал при помощи makeStyles, также есть настройка для экстэншена Redux DevTools в браузере.
-в статусе обновления поста в качестве значения я использовал id поста, количество полных лет с учётом текущего года получил при помощи библиотеки date-fns(не хардкодил)
-В эндпоинте я не нашел поле с городом поэтому захардкодил как на макете.
-
-## В консоли 3 ошибки из-за MUI
-## Верстка адаптирована под два брэйкпоинта (как на макете, десктопная и мобильная версия(на 375px)) не резиновая!
-
-В основу взят видео-ролик youtube.com/watch?v=dgM9OGVfKCQ&t=6313s, но из-за неактуальности (использовали connect и тд) я переписал код, использовал dispatch, useSelect и тд.
+ 
